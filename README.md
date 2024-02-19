@@ -1,6 +1,6 @@
-# My Awesome Blog
+# My Django Blog
 
-Welcome to My Awesome Blog! This is a place where I share my thoughts, ideas, and experiences on various topics.
+Welcome to My Django Blog! This is a place where I share my thoughts, ideas, and experiences on various topics.
 
 ## Features
 
