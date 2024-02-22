@@ -3,7 +3,7 @@ from .models import *
 
 class BlogAdmin(admin.ModelAdmin):
     prepopulated_fields= {'slug':('title',)}
-    list_display = ('title','author','category','is_featured')
+    list_display = ('title','author','category','is_featured','status')
     search_fields = ('title','id','category__category_name')
     list_editable = ('is_featured',)
 
