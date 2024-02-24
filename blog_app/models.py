@@ -31,3 +31,9 @@ class Blog(models.Model):
         return self.title
     
     
+class SocialMediaLinks(models.Model):
+    company = models.CharField(max_length=25)
+    link = models.URLField(max_length=200)
+    def __str__(self):
+        return self.company
+    
