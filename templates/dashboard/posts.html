@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+{% include "dashboard/sidebar.html" %}
+<div class="col-md-9">
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th >#</th>
+            <th >Category Name</th>
+            <th >Create at</th>
+            <th >Update At</th>
+          </tr>
+        </thead>
+        <tbody>
+
+            {% for cat in categories %}
+          <tr>
+            <th>{{forloop.counter}}</th>
+            <td>{{}}</td>
+            <td>{{}}</td>
+            <td>{{}}</td>
+          </tr>
+</div>
+</div>
+{% endblock %}

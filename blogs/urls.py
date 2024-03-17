@@ -25,9 +25,13 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home,name="home"),
     path("posts/", include("blog_app.urls")),
-    path("<slug:slug>",blog,name="blog"),
+    path("blogs/<slug:slug>",blog,name="blog"),
     path("blogs/search/v",search_engine,name="search"),
     path("register/",views.register,name='register'),
     path('login/',views.login_view,name='login'),
     path("logout/",views.logout,name="logout"),
+    #Dashboard
+    path('dashboard/',include("dashboards.urls")),
+
+    
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
