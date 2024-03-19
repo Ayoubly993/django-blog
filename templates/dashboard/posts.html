@@ -4,24 +4,42 @@
 <div class="row">
 {% include "dashboard/sidebar.html" %}
 <div class="col-md-9">
+    <h2>All Posts</h2>
+    <a href="{% url 'add_new_post' %}" class="btn btn-dark text-light  float-right mb-2">add New</a>
     <table class="table">
         <thead class="thead-dark">
           <tr>
             <th >#</th>
-            <th >Category Name</th>
-            <th >Create at</th>
-            <th >Update At</th>
+            <th >Title</th>
+            <th >Category</th>
+            <th >Author</th>
+            <th >Status</th>
+            <th >Featured</th>
+            <th >Action</th>
           </tr>
         </thead>
         <tbody>
 
-            {% for cat in categories %}
+            {% for post in posts %}
           <tr>
             <th>{{forloop.counter}}</th>
-            <td>{{}}</td>
-            <td>{{}}</td>
-            <td>{{}}</td>
+            <td>{{post.title}}</td>
+            <td>{{post.category}}</td>
+            <td>{{post.author}}</td>
+            <td>{{post.status}}</td>
+            <td>{% if post.is_featured %}
+              <i class="fa fa-check text-success"></i>
+              {% else %}
+              <i class="fa fa-times text-danger"></i>
+              {%endif%}</td>
+           
+            <td>
+                <a href="{% url 'edit_post' post.pk %}"><i class="fa fa-edit text-success"></i></a>
+                <a href="{% url 'delete_post' post.pk %}"><i class="fa fa-trash text-danger"></i></a>
+            </td>
           </tr>
+          {% endfor %}
 </div>
 </div>
+<br>
 {% endblock %}

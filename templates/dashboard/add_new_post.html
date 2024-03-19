@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="row">
+{% include "dashboard/sidebar.html" %}
+<div class="col-md-9">
+    <form  enctype="multipart/form-data" action="{% url 'add_new_post' %}" style="width: 500px;" method="POST">
+        {% csrf_token %}
+        {{form | crispy}}
+        <input type="submit" value="add"  class="btn btn-warning">
+    </form>
+</div>
+</div>
+<br>
+{% endblock %}
